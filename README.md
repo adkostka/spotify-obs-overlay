@@ -1,4 +1,5 @@
-# 🎵 Spotify Streaming Overlay
+<img width="1315" height="574" alt="image" src="https://github.com/user-attachments/assets/468b42f3-b958-4525-b2aa-11eb949d058d" />
+
 
 A free, **open-source** now-playing overlay for OBS / streaming — inspired by paid
 tools like Amuse, but yours to host, theme and extend.
