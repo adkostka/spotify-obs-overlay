@@ -219,5 +219,12 @@ It's served from Spotify's CDN (`i.scdn.co`) — check your network/firewall.
 
 ## 📜 License
 
-[MIT](LICENSE) — do whatever you want, just keep the notice. Not affiliated with
-Spotify. "Spotify" is a trademark of Spotify AB.
+[MIT](LICENSE) — do whatever you want, just keep the notice.
+
+## ⚖️ Disclaimer
+
+Not affiliated with, endorsed by, or based on **Amuse** or **6klabs**. This is an
+independent, open-source project built from scratch — no code, assets, or branding
+from Amuse are used here.
+
+Not affiliated with **Spotify**. "Spotify" is a trademark of Spotify AB.
