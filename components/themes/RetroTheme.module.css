@@ -1,0 +1,141 @@
+.frame {
+  --neon: #ff2e97;
+  --cyan: #05d9e8;
+  position: relative;
+  width: 400px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #1a1033 0%, #0d0820 100%);
+  border: 2px solid var(--neon);
+  box-shadow:
+    0 0 18px rgba(255, 46, 151, 0.5),
+    0 0 40px rgba(5, 217, 232, 0.18) inset;
+  color: var(--cyan);
+  font-family: "Courier New", "Roboto Mono", monospace;
+  overflow: hidden;
+  animation: glitchIn 420ms steps(3, end);
+}
+
+.frame[data-idle="true"] {
+  opacity: 0.7;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.25) 3px
+  );
+  mix-blend-mode: overlay;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  font-size: 11px;
+  color: var(--neon);
+  text-shadow: 0 0 6px var(--neon);
+}
+
+.led {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #3a1a2a;
+}
+
+.led[data-on="true"] {
+  background: var(--neon);
+  box-shadow: 0 0 8px var(--neon);
+  animation: blink 1.4s steps(1) infinite;
+}
+
+.body {
+  display: flex;
+  gap: 14px;
+}
+
+.art,
+.artFallback {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 2px solid var(--cyan);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+  filter: saturate(1.1) contrast(1.05);
+}
+
+.artFallback {
+  background: repeating-linear-gradient(45deg, #2a1a44, #2a1a44 6px, #1a1033 6px, #1a1033 12px);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 0 8px var(--cyan);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist {
+  margin-top: 3px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar {
+  margin-top: 12px;
+  height: 6px;
+  background: rgba(5, 217, 232, 0.15);
+  border: 1px solid rgba(5, 217, 232, 0.4);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan), var(--neon));
+  box-shadow: 0 0 10px var(--neon);
+  transition: width 250ms linear;
+}
+
+.times {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: rgba(5, 217, 232, 0.7);
+}
+
+@keyframes glitchIn {
+  0% { opacity: 0; transform: translateX(-6px); }
+  50% { opacity: 1; transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes blink {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0.35; }
+}

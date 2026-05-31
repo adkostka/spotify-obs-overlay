@@ -1,0 +1,82 @@
+.row {
+  --accent: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 340px;
+  padding: 8px 10px 14px;
+  color: #fff;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 360ms ease;
+}
+
+.row[data-idle="true"] {
+  opacity: 0.6;
+}
+
+.art,
+.artFallback {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.artFallback {
+  background: linear-gradient(135deg, #3a3a3a, #1a1a1a);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dot {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.artist {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 250ms linear;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

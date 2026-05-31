@@ -1,0 +1,114 @@
+.card {
+  --neon: #9d4dff;
+  --neon-2: #00e5ff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 410px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(10, 8, 20, 0.78);
+  border: 2px solid var(--neon);
+  box-shadow:
+    0 0 12px var(--neon),
+    0 0 28px rgba(157, 77, 255, 0.4),
+    0 0 12px var(--neon) inset;
+  color: #fff;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  animation: cardIn 460ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card[data-playing="true"] {
+  animation:
+    cardIn 460ms cubic-bezier(0.22, 1, 0.36, 1),
+    pulse 2.4s ease-in-out 460ms infinite;
+}
+
+.card[data-idle="true"] {
+  opacity: 0.65;
+}
+
+.art,
+.artFallback {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.5);
+}
+
+.artFallback {
+  background: linear-gradient(135deg, var(--neon), var(--neon-2));
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 10px var(--neon-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist {
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--neon-2);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar {
+  margin-top: 12px;
+  height: 5px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--neon-2), var(--neon));
+  box-shadow: 0 0 12px var(--neon);
+  transition: width 250ms linear;
+}
+
+.times {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 12px var(--neon),
+      0 0 28px rgba(157, 77, 255, 0.4),
+      0 0 12px var(--neon) inset;
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--neon),
+      0 0 48px rgba(157, 77, 255, 0.6),
+      0 0 18px var(--neon) inset;
+  }
+}

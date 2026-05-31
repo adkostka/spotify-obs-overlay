@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* Transparent by default so OBS composites the overlay over your scene.
+     The landing page paints its own opaque background on top of this. */
+  background: transparent;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- Overlay (the OBS browser source) ----------------------------------- */
+.overlay-root {
+  /* Content sits top-left; position/size the browser source in OBS to taste. */
+  display: inline-block;
+}
+
+.overlay-notice {
+  margin: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
+}
+
+.overlay-notice strong {
+  color: #1db954;
+}
