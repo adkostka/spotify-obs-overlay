@@ -54,7 +54,7 @@ Built with **Next.js (App Router) + TypeScript**.
 
 ```bash
 # 1) Clone the repo (or download the ZIP from the GitHub page → "Code" → "Download ZIP")
-git clone https://github.com/YOUR_USERNAME/spotify-obs-overlay.git
+git clone https://github.com/adkostka/spotify-obs-overlay.git
 cd spotify-obs-overlay
 
 # 2) Install dependencies — pick ONE:
